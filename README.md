@@ -9,7 +9,11 @@ django restful framework 非官方指南
 - 自己很菜，如果有写的不正确或者不合适的地方希望大家可以指正。
 - 欢迎各位大佬一起交流。
 
+## 适合人群
+
+- 对Django有基本了解，想要学习django restful framework使用的。
+
 ## 开发环境搭建
 
 - Python3.6.5
-- 
+- Django2.2 + djangorestframework-3.12.1
