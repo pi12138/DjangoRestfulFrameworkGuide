@@ -17,3 +17,8 @@ django restful framework 非官方指南
 
 - Python3.6.5
 - Django2.2 + djangorestframework-3.12.1
+
+## 参考文档
+
+- [官方文档](https://www.django-rest-framework.org/api-guide/)
+- [其他大佬翻译的文档](https://www.bookstack.cn/read/django-rest-framework-api-guide/README.md)
