@@ -191,4 +191,13 @@ class RequestViewSet(viewsets.ViewSet):
 - request body传入参数form-data时，request.data解析出来的为django的queryDict
 - 需要注意的是，这两种数据类型在操作上有所不同
 - [django queryDict](https://docs.djangoproject.com/en/2.2/ref/request-response/#querydict-objects)
-  
+- 具体的表现在传数组数据时，json参数可以使用request.data.get(var_name)获取到数组中的所有内容; 但是form-data的参数使用request.data.get(var_name)只能获取到一个最新的内容，如果要想获取所有内容需要使用request.data.getlist(var_name), 此时就需要注意，python的dict是没有getlist方法的这是queryDict的一个方法，如果一不小心误用就会导致异常。
+
+- 提供一种我自己解决办法
+
+```python
+if isinstance(request.data, queryDict):
+    names = request.data.getlist('names')
+elif isinstance(request.data, dict):
+    names = request.data.get('names')
+```

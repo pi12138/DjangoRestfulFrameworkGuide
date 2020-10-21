@@ -24,4 +24,6 @@ class RequestViewSet(viewsets.ViewSet):
             'user': str(request.user),
             'type': str(type(request.data)),
         }
+        print(request.data.get('name'))
+        print(request.data.getlist('name'))
         return Response(data)
