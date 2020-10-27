@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from rest_framework import viewsets
 from rest_framework.request import Request
 from rest_framework.response import Response
@@ -27,3 +29,13 @@ class RequestViewSet(viewsets.ViewSet):
         print(request.data.get('name'))
         print(request.data.getlist('name'))
         return Response(data)
+
+
+class ResponseViewSet(viewsets.ViewSet):
+    def list(self, request, *args, **kwargs):
+        data = {
+            'datetime': datetime.now()
+        }
+        response = Response(data)
+
+        return response
